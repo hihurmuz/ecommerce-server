@@ -20,6 +20,8 @@ router.post("/product", async (req,res)=>{
         product.title = req.body.title;
         product.price = req.body.price;
         product.stockNumber =  req.body.stockNumber;
+        product.summary =  req.body.summary;
+        product.features =  req.body.features;
         product.description= req.body.description;
         product.photo = req.body.photo;
         product.mainCategory = req.body.mainCategory;
@@ -64,6 +66,8 @@ router.put("/product/:id",async (req,res)=>{
                 price : req.body.price,
                 stockNumber :  req.body.stockNumber,
                 description : req.body.description,
+                summary :  req.body.summary,
+                features :  req.body.features,
                 photo : req.body.photo,
                 mainCategory : req.body.mainCategory,
                 subCategory : req.body.subCategory,
