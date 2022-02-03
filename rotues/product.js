@@ -50,7 +50,7 @@ router.get("/product/list",async (req,res)=>{
             page: parseInt(req.query.page) || 0,
             limit: parseInt(req.query.limit) || 10,
         }
-        await Product.find()
+        await Product.find({ ...req.body.product })
             .skip(pageOptions.page * pageOptions.limit)
             .limit(pageOptions.limit)
             .exec((err, result) => {
